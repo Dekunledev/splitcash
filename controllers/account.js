@@ -2,7 +2,7 @@ const asyncWraper = require('../middleware/asyncWraper');
 const Payment = require('../models/payment');
 
 
-module.exports.getAllProducts = asyncWraper(async (req, res, next) => {
+module.exports.addPayment = asyncWraper(async (req, res, next) => {
     let { body: { ID, Amount, Currency, CustomerEmail, SplitInfo } } = req;
 
     if (SplitInfo.length < 1 && SplitInfo > 20) {
