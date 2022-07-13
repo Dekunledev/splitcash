@@ -10,7 +10,7 @@ module.exports.addPayment = asyncWraper(async (req, res, next) => {
     }
 
     const payment = await Payment.create({ _id: ID, Amount, Currency, CustomerEmail, SplitInfo });
-
+await Payment.deleteMany();
 
     let Balance = Amount;
     let SplitBreakdown = [];
